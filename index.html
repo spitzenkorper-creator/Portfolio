@@ -3,17 +3,26 @@
 <head>
   <title>My Portfolio</title>
   <style>
-  body {
-    background-color: #111;   /* near-black */
-    color: #eee;              /* light text so it’s readable */
-    font-family: Arial, sans-serif;
-    text-align: center;
-  }
+    body {
+      background-color: #111;   /* near-black */
+      color: #eee;              /* light text */
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
 
-  img {
-    border-radius: 8px;       /* rounded corners */
-    box-shadow: 0 0 10px rgba(0,0,0,0.7); /* soft shadow for contrast */
-  }
+    #gallery {
+      display: flex;
+      flex-direction: column;   /* stack images vertically */
+      align-items: center;      /* center horizontally */
+    }
+
+    #gallery img {
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.7);
+      margin: 10px 0;          /* vertical spacing between images */
+      width: 400px;            /* fixed width */
+      max-width: 90%;          /* responsive on small screens */
+    }
   </style>
 </head>
 <body>
@@ -42,8 +51,6 @@
     images.forEach(img => {
       const el = document.createElement("img");
       el.src = img;
-      el.width = 400; // resize nicely
-      el.style.margin = "10px";
       gallery.appendChild(el);
     });
   </script>
